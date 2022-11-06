@@ -1,5 +1,6 @@
 package io.github.reconsolidated.snapfile.FileDownload;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.core.io.Resource;
 import org.springframework.http.HttpHeaders;
@@ -14,6 +15,7 @@ import java.io.File;
 import java.util.Optional;
 
 @Controller
+@Slf4j
 public class FileDownloadController {
     private final FileDownloadService fileDownloadService;
 
@@ -22,15 +24,18 @@ public class FileDownloadController {
     }
 
     @GetMapping("/download/{code}")
-    public ResponseEntity<Resource> download(@PathVariable String code, HttpServletRequest request) {
-        Optional<File> optional = fileDownloadService.getCodeFile(code);
-        if (optional.isPresent()) {
-            Resource resource = new FileSystemResource(optional.get());
-            String contentType = request.getServletContext().getMimeType(optional.get().getAbsolutePath());
+    public ResponseEntity<Resource> download(@PathVariable String code) {
+        log.info("Download request for code: " + code);
+
+        Optional<File> optionalFile = fileDownloadService.getCodeFile(code);
+        Optional<String> optionalFilename = fileDownloadService.getCodeFilename(code);
+        String fileName = optionalFilename.orElse("file-" + code);
+        if (optionalFile.isPresent()) {
+            Resource resource = new FileSystemResource(optionalFile.get());
             return ResponseEntity
                     .ok()
                     .contentType(MediaType.APPLICATION_OCTET_STREAM)
-                    .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + resource.getFilename() + "\"")
+                    .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + fileName + "\"")
                     .body(resource);
         }
         return ResponseEntity.notFound().build();

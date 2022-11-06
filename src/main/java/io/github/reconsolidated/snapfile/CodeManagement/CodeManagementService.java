@@ -52,7 +52,7 @@ public class CodeManagementService {
     }
 
     private boolean isCodeUsed(int code) {
-        return codeInstances.contains(new CodeInstance(String.valueOf(code), ""));
+        return codeInstances.contains(new CodeInstance(String.valueOf(code), "", ""));
     }
 
     public Optional<CodeInstance> getCodeInstance(String code) {

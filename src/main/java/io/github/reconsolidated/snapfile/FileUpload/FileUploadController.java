@@ -17,8 +17,8 @@ public class FileUploadController {
         this.fileUploadService = fileUploadService;
     }
 
-    @PostMapping("/upload")
-    public ResponseEntity<Map<String, String>> upload(@RequestParam("file") MultipartFile file ) {
+    @PostMapping(path = "/upload")
+    public ResponseEntity<Map<String, String>> upload(@RequestParam(value = "file") MultipartFile file ) {
         return ResponseEntity.ok(
                 Map.of("code", fileUploadService.upload(file))
         );

@@ -15,13 +15,13 @@ public class FileDownloadService {
         this.codeManagementService = codeManagementService;
     }
 
-    public Optional<String> getCodeFilename(String code) {
-        var optional = codeManagementService.getCodeInstance(code);
-        return optional.map(CodeInstance::getFilePath);
-    }
-
     public Optional<File> getCodeFile(String code) {
         var optional = codeManagementService.getCodeInstance(code);
         return optional.map(CodeInstance::getFilePath).map(File::new);
+    }
+
+    public Optional<String> getCodeFilename(String code) {
+        var optional = codeManagementService.getCodeInstance(code);
+        return optional.map(CodeInstance::getFileName);
     }
 }

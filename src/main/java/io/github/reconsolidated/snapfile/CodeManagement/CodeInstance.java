@@ -9,6 +9,7 @@ import java.util.Objects;
 @Getter
 public class CodeInstance {
     private String code;
+    private String fileName;
     private String filePath;
 
     @Override

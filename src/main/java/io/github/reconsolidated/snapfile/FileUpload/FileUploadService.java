@@ -3,13 +3,11 @@ package io.github.reconsolidated.snapfile.FileUpload;
 import io.github.reconsolidated.snapfile.CodeManagement.CodeInstance;
 import io.github.reconsolidated.snapfile.CodeManagement.CodeManagementService;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
-import java.util.Map;
+import java.util.UUID;
 import java.util.logging.Logger;
 
 @Service
@@ -36,7 +34,7 @@ public class FileUploadService {
         if (location.mkdir()) {
             logger.info("Created files folder: " + filesLocation);
         }
-        String path = filesLocation + fileName;
+        String path = filesLocation + UUID.randomUUID().toString();
 
         try {
             file.transferTo( new File(path));
@@ -48,7 +46,7 @@ public class FileUploadService {
         }
 
         String code = codeManagementService.getAvailableCode();
-        codeManagementService.addCode(new CodeInstance(code, path));
+        codeManagementService.addCode(new CodeInstance(code, fileName, path));
 
         return code;
     }

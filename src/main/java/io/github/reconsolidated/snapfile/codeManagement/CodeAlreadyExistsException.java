@@ -1,4 +1,4 @@
-package io.github.reconsolidated.snapfile.CodeManagement;
+package io.github.reconsolidated.snapfile.codeManagement;
 
 public class CodeAlreadyExistsException extends RuntimeException {
     public CodeAlreadyExistsException(String code) {

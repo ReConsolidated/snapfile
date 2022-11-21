@@ -1,0 +1,25 @@
+files_folder_location: D://Snap_file_storage/
+code_length: 6
+code_expiration_time: 3600
+code_expiration_check_time: 120
+spring:
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 50MB
+  datasource:
+    password: docker
+    url: jdbc:postgresql://localhost:5432/snapfile
+    username: postgres
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    show-sql: true
+  session:
+    store-type: jdbc
+    jdbc:
+      initialize-schema: always

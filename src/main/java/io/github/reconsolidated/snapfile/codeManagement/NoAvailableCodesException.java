@@ -1,4 +1,4 @@
-package io.github.reconsolidated.snapfile.CodeManagement;
+package io.github.reconsolidated.snapfile.codeManagement;
 
 public class NoAvailableCodesException extends RuntimeException {
     public NoAvailableCodesException() {

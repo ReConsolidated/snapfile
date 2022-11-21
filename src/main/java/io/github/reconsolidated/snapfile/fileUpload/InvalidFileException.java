@@ -1,4 +1,4 @@
-package io.github.reconsolidated.snapfile.FileUpload;
+package io.github.reconsolidated.snapfile.fileUpload;
 
 public class InvalidFileException extends RuntimeException {
     public InvalidFileException() {

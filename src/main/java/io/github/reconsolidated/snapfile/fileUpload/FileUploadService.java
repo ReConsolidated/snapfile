@@ -1,7 +1,7 @@
-package io.github.reconsolidated.snapfile.FileUpload;
+package io.github.reconsolidated.snapfile.fileUpload;
 
-import io.github.reconsolidated.snapfile.CodeManagement.CodeInstance;
-import io.github.reconsolidated.snapfile.CodeManagement.CodeManagementService;
+import io.github.reconsolidated.snapfile.codeManagement.CodeInstance;
+import io.github.reconsolidated.snapfile.codeManagement.CodeManagementService;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -28,13 +28,13 @@ public class FileUploadService {
      * @param file to upload
      * @return code to download file
      */
-    public String upload(MultipartFile file) {
+    public String upload(MultipartFile file, String ownerSessionId, boolean requiresAcceptance) {
         String fileName = file.getOriginalFilename();
         File location = new File(filesLocation);
         if (location.mkdir()) {
             logger.info("Created files folder: " + filesLocation);
         }
-        String path = filesLocation + UUID.randomUUID().toString();
+        String path = filesLocation + UUID.randomUUID();
 
         try {
             file.transferTo( new File(path));
@@ -45,8 +45,8 @@ public class FileUploadService {
             throw new InvalidFileException();
         }
 
-        String code = codeManagementService.getAvailableCode();
-        codeManagementService.addCode(new CodeInstance(code, fileName, path));
+        String code = codeManagementService.getAvailableCode(5);
+        codeManagementService.addCode(new CodeInstance(code, fileName, path, System.currentTimeMillis(), ownerSessionId, requiresAcceptance));
 
         return code;
     }

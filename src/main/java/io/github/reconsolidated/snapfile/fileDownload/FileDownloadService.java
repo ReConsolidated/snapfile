@@ -1,7 +1,7 @@
-package io.github.reconsolidated.snapfile.FileDownload;
+package io.github.reconsolidated.snapfile.fileDownload;
 
-import io.github.reconsolidated.snapfile.CodeManagement.CodeInstance;
-import io.github.reconsolidated.snapfile.CodeManagement.CodeManagementService;
+import io.github.reconsolidated.snapfile.codeManagement.CodeInstance;
+import io.github.reconsolidated.snapfile.codeManagement.CodeManagementService;
 import org.springframework.stereotype.Service;
 
 import java.io.File;

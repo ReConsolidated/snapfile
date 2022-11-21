@@ -1,4 +1,4 @@
-package io.github.reconsolidated.snapfile.FileDownload;
+package io.github.reconsolidated.snapfile.fileDownload;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.io.FileSystemResource;

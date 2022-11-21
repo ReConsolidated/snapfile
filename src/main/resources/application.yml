@@ -1,4 +1,4 @@
-files_folder_location: D://Snap_file_storage/
+files_folder_location: C://Snap_file_storage/
 code_length: 6
 code_expiration_time: 3600
 code_expiration_check_time: 120
@@ -8,7 +8,7 @@ spring:
       max-file-size: 50MB
       max-request-size: 50MB
   datasource:
-    password: docker
+    password: ${db_password}
     url: jdbc:postgresql://localhost:5432/snapfile
     username: postgres
   jpa:

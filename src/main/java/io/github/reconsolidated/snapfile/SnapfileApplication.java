@@ -14,6 +14,7 @@ import org.springframework.web.multipart.support.StandardServletMultipartResolve
 public class SnapfileApplication {
 
 	public static void main(String[] args) {
+
 		SpringApplication.run(SnapfileApplication.class, args);
 	}
 

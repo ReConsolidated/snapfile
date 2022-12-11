@@ -1,5 +1,6 @@
 package io.github.reconsolidated.snapfile.manageFiles;
 
+import io.github.reconsolidated.snapfile.downloadRequest.DownloadRequestService;
 import io.github.reconsolidated.snapfile.manageFiles.dto.FileListCodeDto;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -13,6 +14,7 @@ import java.util.List;
 @Controller
 public class ManageFilesController {
     private final ManageFilesService manageFilesService;
+    private final DownloadRequestService downloadRequestService;
 
     @GetMapping("/manage_files")
     public ResponseEntity<List<FileListCodeDto>> listFiles(HttpSession session) {

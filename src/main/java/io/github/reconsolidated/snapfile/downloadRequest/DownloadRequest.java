@@ -20,6 +20,7 @@ public class DownloadRequest {
     private String requesterSessionId;
     private String requesterName;
     private boolean accepted = false;
+    private boolean declined = false;
 
     public DownloadRequest(String requesterSessionId, String requesterName, String code) {
         this.requesterSessionId = requesterSessionId;
@@ -29,5 +30,9 @@ public class DownloadRequest {
 
     public void setAccepted(boolean accepted) {
         this.accepted = true;
+    }
+
+    public void setDeclined(boolean declined) {
+        this.declined = true;
     }
 }

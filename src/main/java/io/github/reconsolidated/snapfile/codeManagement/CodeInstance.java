@@ -5,6 +5,8 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import java.util.Objects;
 
 @Getter
@@ -18,6 +20,7 @@ public class CodeInstance {
     private long sendTime;
     private String ownerSessionId;
     private boolean requiresAcceptance;
+
 
     public CodeInstance(String code, String fileName, String filePath, long sendTime, String ownerSessionId, boolean requiresAcceptance) {
         this.code = code;

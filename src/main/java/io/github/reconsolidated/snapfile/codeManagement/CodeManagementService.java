@@ -37,7 +37,8 @@ public class CodeManagementService {
     public void cleanInactiveCodes() {
         long startTime = System.currentTimeMillis();
         log.info("Cleaning inactive codes");
-        var codes = codeRepository.findAll();
+        long sendTime = System.currentTimeMillis() - 1000L * CODE_EXPIRATION_TIME;
+        var codes = codeRepository.findAllBySendTimeLessThan(sendTime);
         for (var code : codes) {
             if (code.getSendTime() + 1000L * CODE_EXPIRATION_TIME < System.currentTimeMillis()) {
                 codeRepository.delete(code);

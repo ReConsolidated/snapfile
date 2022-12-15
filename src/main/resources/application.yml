@@ -1,7 +1,7 @@
 files_folder_location: C://Snap_file_storage/
 code_length: 6
 code_expiration_time: 3600
-code_expiration_check_time: 120
+code_expiration_check_time: 1
 spring:
   servlet:
     multipart:

@@ -10,7 +10,10 @@ import java.util.Optional;
 public interface CodeRepository extends JpaRepository<CodeInstance, String> {
     Optional<CodeInstance> findByCode(String code);
 
+    List<CodeInstance> findAllBySendTimeLessThan(long sendTime);
+
     List<CodeInstance> findAllByOwnerSessionId(String ownerSessionId);
 
     Optional<CodeInstance> findByCodeAndOwnerSessionId(String code, String ownerSessionId);
+
 }

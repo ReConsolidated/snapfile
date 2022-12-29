@@ -1,0 +1,59 @@
+.code {
+    font-size: 25px;
+    margin-bottom: 8px;
+    margin-left: 4px;
+    align-self: start;
+    width: min-content;
+}
+
+.file_name {
+    font-size: 20px;
+    margin: 4px;
+}
+
+.code-container {
+    background-color: #c8dadf;
+}
+
+.requester-name {
+    margin-top: 19px;
+    margin-bottom: 10px;
+    font-size: 19px;
+}
+
+button {
+    margin: 3px;
+    display: inline-block;
+    padding: .4rem 0.8rem;
+    border-radius: 7rem;
+    color: black;
+    background-color: white;
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: .05rem;
+    transition: all .3s;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+#codes_container {
+    background-color: #c8dadf;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    outline: 2px dashed #92b0b3;
+    outline-offset: -10px;
+
+    -webkit-transition: outline-offset .15s ease-in-out, background-color .15s linear;
+    transition: outline-offset .15s ease-in-out, background-color .15s linear;
+}
+
+li {
+    padding: 20px;
+    outline: 2px dashed #92b0b3;
+    outline-offset: -10px;
+
+    -webkit-transition: outline-offset .15s ease-in-out, background-color .15s linear;
+    transition: outline-offset .15s ease-in-out, background-color .15s linear;
+}

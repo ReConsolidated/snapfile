@@ -1,0 +1,74 @@
+
+@import url( '_normalize.css' );
+@import url( '_defaults.css' );
+
+
+body
+{
+    font-family: Lucida Grande, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif;
+}
+
+a
+{
+    color: currentColor;
+    text-decoration: none;
+}
+
+.clearfix::after
+{
+    content: '';
+    display: table;
+    clear: both;
+}
+
+body
+{
+    font-family: Roboto, sans-serif;
+    color: #0f3c4b;
+    background-color: #e5edf1;
+    padding: 0.4rem 1.25rem; /* 80 20 */
+}
+
+.container
+{
+    width: 100%;
+    max-width: 680px; /* 800 */
+    text-align: center;
+    margin: 0 auto;
+}
+
+.container h1
+{
+    font-size: 42px;
+    font-weight: 300;
+    color: #0f3c4b;
+    margin-bottom: 40px;
+}
+.container h1 a:hover,
+.container h1 a:focus
+{
+    color: #39bfd3;
+}
+
+.container nav
+{
+    margin-bottom: 15px;
+}
+.container nav a
+{
+    border-bottom: 2px solid #c8dadf;
+    display: inline-block;
+    padding: 4px 8px;
+    margin: 0 5px;
+}
+.container nav a.is-selected
+{
+    font-weight: 700;
+    color: #39bfd3;
+    border-bottom-color: currentColor;
+}
+.container nav a:not( .is-selected ):hover,
+.container nav a:not( .is-selected ):focus
+{
+    border-bottom-color: #0f3c4b;
+}

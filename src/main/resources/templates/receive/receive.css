@@ -1,0 +1,55 @@
+#code_input {
+    font-size: 6vw;
+    width: 23.5vw;
+}
+
+#name_input {
+    width: 11vw;
+}
+
+input {
+    display:block;
+    padding: 12px 20px;
+    margin: 10px auto 15px;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+label {
+    display:block;
+    margin: auto auto 15px;
+}
+
+.box__button
+{
+    display: block;
+}
+.box__button
+{
+    font-weight: 700;
+    color: #e5edf1;
+    background-color: #39bfd3;
+    display: block;
+    padding: 8px 16px;
+    margin: 40px auto 0;
+}
+.box__button:hover,
+.box__button:focus
+{
+    background-color: #0f3c4b;
+}
+
+#request_successful {
+    display: none;
+    color: green;
+    font-size: 20px;
+    margin: 8px;
+}
+
+
+#request_failed {
+    display: none;
+    color: red;
+    font-size: 20px;
+    margin: 8px;
+}

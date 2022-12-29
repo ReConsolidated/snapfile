@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html lang="en" class="no-js">
+
+<head>
+  <meta charset="utf-8">
+  <title>Receive Snap Files!</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="../common.css" />
+  <link rel="stylesheet" href="receive.css" />
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,300italic,400" />
+
+</head>
+
+<body>
+
+<div class="container" role="main">
+
+  <h1><a href="/article-url"></a></h1>
+
+  <nav role="navigation">
+    <a href="../index.html" >Send</a>
+    <a href="../manage/manage.html" >Manage</a>
+    <a href="" class="is-selected">Receive</a>
+  </nav>
+
+    <label>
+      Code
+      <input id="code_input" placeholder="000000" type="number">
+    </label>
+    <label>
+      Your name (optional)
+      <input id="name_input" type="text">
+    </label>
+    <button type="submit" class="box__button" onclick="downloadFile()">Request file</button>
+  <p id="request_successful" style="display: none;">Request sent!</p>
+  <p id="request_failed" style="display: none;">This code doesn't exist!</p>
+
+</div>
+<script src="receive.js"></script>
+
+</body>
+
+</html>

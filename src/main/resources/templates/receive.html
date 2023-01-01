@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 
-<html lang="en" class="no-js">
+<html lang="en" class="no-js" xmlns:th="https://www.thymeleaf.org/">
 
 <head>
   <meta charset="utf-8">
   <title>Receive Snap Files!</title>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <link rel="stylesheet" href="../common.css" />
-  <link rel="stylesheet" href="receive.css" />
+  <link rel="stylesheet" th:href="@{/css/common.css}" />
+  <link rel="stylesheet" th:href="@{/css/receive.css}" />
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,300italic,400" />
 
 </head>
@@ -15,12 +15,9 @@
 <body>
 
 <div class="container" role="main">
-
-  <h1><a href="/article-url"></a></h1>
-
   <nav role="navigation">
-    <a href="../index.html" >Send</a>
-    <a href="../manage/manage.html" >Manage</a>
+    <a href="/" >Send</a>
+    <a href="/manage" >Manage</a>
     <a href="" class="is-selected">Receive</a>
   </nav>
 
@@ -37,7 +34,7 @@
   <p id="request_failed" style="display: none;">This code doesn't exist!</p>
 
 </div>
-<script src="receive.js"></script>
+<script th:src="@{/js/receive.js}"></script>
 
 </body>
 

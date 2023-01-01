@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 
-<html lang="en" class="no-js">
+<html class="no-js" xmlns:th="https://www.thymeleaf.org/">
 
 <head>
     <meta charset="utf-8">
     <title>Send Snap Files!</title>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <link rel="stylesheet" href="common.css" />
-    <link rel="stylesheet" href="send/main.css" />
+    <link th:href = "@{/css/common.css}"  rel="stylesheet" />
+    <link th:href = "@{/css/main.css}"  rel="stylesheet"/>
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,300italic,400" />
 </head>
 
@@ -17,8 +17,8 @@
 
     <nav role="navigation">
         <a href="" class="is-selected">Send</a>
-        <a href="manage/manage.html" >Manage</a>
-        <a href="receive/receive.html" >Receive</a>
+        <a href="manage" >Manage</a>
+        <a href="receive" >Receive</a>
     </nav>
 
     <form method="post" action="" enctype="multipart/form-data" novalidate class="box">
@@ -41,7 +41,7 @@
 
 </div>
 
-<script src="send/dragndrop.js"></script>
+<script th:src="@{/js/dragndrop.js}"></script>
 
 </body>
 

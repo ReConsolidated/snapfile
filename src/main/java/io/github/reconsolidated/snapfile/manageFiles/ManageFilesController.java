@@ -18,6 +18,7 @@ public class ManageFilesController {
 
     @GetMapping("/manage_files")
     public ResponseEntity<List<FileListCodeDto>> listFiles(HttpSession session) {
-        return ResponseEntity.ok(manageFilesService.getFiles(session.getId()).stream().map(FileListCodeDto::fromCodeInstance).toList());
+        return ResponseEntity.ok(manageFilesService.getFiles(session.getId()).stream().map((code) ->
+                FileListCodeDto.fromCodeInstance(code, downloadRequestService.getRequests(code.getCode()))).toList());
     }
 }

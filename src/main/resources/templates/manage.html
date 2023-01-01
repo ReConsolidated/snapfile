@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html lang="en" class="no-js" xmlns:th="https://www.thymeleaf.org/">
+
+<head>
+  <meta charset="utf-8">
+  <title>Send Snap Files!</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" th:href="@{/css/common.css}" />
+  <link rel="stylesheet" th:href="@{/css/manage.css}" />
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,300italic,400" />
+</head>
+
+<body>
+
+<div class="container" role="main">
+
+  <nav role="navigation">
+    <a href="/">Send</a>
+    <a href="" class="is-selected">Manage</a>
+    <a href="/receive" >Receive</a>
+  </nav>
+
+  <div id="no_codes" style="display: none;">
+    <h1>You don't have any codes. Send some files first!</h1>
+  </div>
+
+  <div id="codes_container">
+    <ul id="list" th:each="code: ${codes}">
+      <li>
+        <div class="code-container">
+          <div class="code" th:text="${code.code}"></div>
+          <div class="file_name" th:text="${code.fileName}">
+          </div>
+          <div class="request_list" th:each="request: ${code.requests}">
+            <div class="request">
+              <div class="requester-name" >
+                Request from <div th:text="${request.requesterName}"></div>
+              </div>
+              <button>Accept</button>
+              <button>Decline</button>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+
+
+</div>
+
+</body>
+
+</html>
